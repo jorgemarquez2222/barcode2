@@ -7,7 +7,6 @@
     <div id="qr-reader" style="width:500px"></div>
     <div id="qr-reader-results"></div>
     <input type="text" id="results-code">
-    <input type="text" id="results-code2">
 
 </body>
 <script src="html5-qrcode.min.js"></script>
@@ -35,16 +34,14 @@
                 // Handle on success condition with the decoded message.
                 console.log(`Scan result ${decodedText}`, decodedResult);
                 var rcode = document.getElementById('results-code');
-                var rcode2 = document.getElementById('results-code2');
                 rcode.value = decodedResult
-                rcode.value = decodedText
                 sound.play();
 
             // }
         }
 
         var html5QrcodeScanner = new Html5QrcodeScanner(
-            "qr-reader", { fps: 10, qrbox: 250 });
+            "qr-reader", { fps: 10, qrbox: 350 });
         html5QrcodeScanner.render(onScanSuccess);
     });
 </script>
